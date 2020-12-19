@@ -1,0 +1,18 @@
+<form>
+  <label>Name</label>
+  <input type="text" name="name" [(ngModel)]="carModel.name" required>
+  <br>
+  <select name="motor" [(ngModel)]="carModel.motor" required>
+    <option *ngFor="let motor of motors" [value]="motor">{{motor}}</option>
+  </select>
+  <br>
+  <input type="radio" name="hasSunRoof" [(ngModel)]="carModel.hasSunRoof" value="true" id=""> Has Sun hasSunRoof
+  <input type="radio" name="hasSunRoof" [(ngModel)]="carModel.hasSunRoof" value="false" id="">Has No Sun Roof
+
+  <br>
+  <input type="submit" value="Save">
+</form>
+
+<hr>
+
+<pre>{{getCurrentModel()}}</pre>

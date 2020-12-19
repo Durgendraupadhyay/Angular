@@ -1,0 +1,15 @@
+<form #login="ngForm" (ngSubmit)="loginuser(login)">
+    Name:<input type="text" name="fname" [ngModel]="Name" required #fname="ngModel"><br><br>
+    <span *ngIf="fname.touched && !fname.valid">Please enter your name</span>
+    Email:<input type="email" name="email" [ngModel]="email" required #email="ngModel"><br>
+    <span *ngIf="email.touched && !email.valid">Please enter your email address</span>
+
+    <br>
+    <input type="submit" value="Submit" [disabled]="!login.valid">
+</form>
+
+<hr>
+
+<h1 *ngIf="Name">Welcome {{Name}}</h1>
+<h1>{{email}}</h1>
+

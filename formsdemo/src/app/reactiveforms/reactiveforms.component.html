@@ -1,0 +1,17 @@
+<fieldset>
+    <legend>Form</legend>
+    <form [formGroup]="detailsForm" (ngSubmit)="postData();">
+        Name:<input type="text" formControlName="name"><br><br>
+        <span *ngIf="detailsForm.get('name').touched && detailsForm.get('name').hasError('required')">Plz enter your name</span><br><br>
+        <br><br>
+        <span *ngIf="detailsForm.get('name').touched && detailsForm.get('name').hasError('minlength')">Min length is 4</span><br><br>
+        Email:<input type="email" formControlName="email"><br><br>
+        <span *ngIf="detailsForm.get('email').touched && detailsForm.get('email').hasError('email')">Plz enter a valid email</span><br><br>
+        <br><br>
+        <span *ngIf="detailsForm.get('email').touched && detailsForm.get('email').hasError('required')">Plz enter your email</span><br><br>
+        <input type="submit" value="Submit" [disabled]="!detailsForm.valid">
+    </form>
+</fieldset>
+
+<h2>{{fname}}</h2>
+<h2>{{email1}}</h2>

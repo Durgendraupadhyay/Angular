@@ -1,0 +1,8 @@
+<app-about (msgToEmit) = "getMsg($event)"></app-about>
+{{recieveMessageFromChild}}
+<!-- [recieveFromParent]="msgToChild" -->
+
+<hr>
+
+<input [(ngModel)]="fullname"><br><br>
+<h1>{{fullname}}</h1>
